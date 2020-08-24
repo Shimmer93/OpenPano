@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 # find_package(JPEG REQUIRED NO_SYSTEM_ENVIRONMENT_PATH)
-find_library(JPEG jpeg REQUIRED NO_SYSTEM_ENVIRONMENT_PATH)
+find_library(JPEG jpeg REQUIRED PATHS ${POLY_PATH}/jpeg-9d/build-pi/lib NO_SYSTEM_ENVIRONMENT_PATH)
 message(${JPEG})
 
-find_package(Eigen3 REQUIRED)
 find_package(OpenMP)
+
+set(JPEG_INCLUDE_DIR ${POLY_PATH}/jpeg-9d/build-pi/include)
+set(EIGEN3_INCLUDE_DIR ${POLY_PATH}/eigen/build-pi/output/include/eigen3)
 
 # include_directories(${JPEG_INCLUDE_DIR})
 include_directories(/opt/devel/ref-pi/usr/include /opt/devel/ref-pi/usr/include/arm-linux-gnueabihf)

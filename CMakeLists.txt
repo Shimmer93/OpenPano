@@ -46,11 +46,6 @@ endif()
 #################################################################################################################
 # ============================================ General build definitions ====================================== #
 #################################################################################################################
-if(NOT EIGEN3_INCLUDE_DIR )
-    message(FATAL_ERROR "Set EIGEN3_INCLUDE_DIR")
-endif()
-include_directories(${EIGEN3_INCLUDE_DIR})
-
 if(MSVC)
 
   add_definitions(-D_CRT_SECURE_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN)
